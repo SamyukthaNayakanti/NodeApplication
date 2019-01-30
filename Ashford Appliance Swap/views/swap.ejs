@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset="UTF-8">
+   <title>Ashford Community Home Appliance swap</title>
+   <link rel="stylesheet" type="text/css" href ="../resources/Css/style.css">
+   <script src="Layout/Javascipt/item.js"></script>
+
+</head>
+<body>
+  <% include partials/welcome.ejs %>
+
+  <% include partials/logout.ejs %>
+  <% include partials/site-navigation.ejs %>
+    <main>
+       <form action="/feedback" method="POST">
+
+
+      <h2>Swap this item</h2><br>
+      <h2>Select a item from your available swap</h2>
+    <% if(ans.length >0) { %>
+      <% for(var i=0;i< ans.length; i++ ) { %>
+        <table>
+          <tr>
+          <th><input type="radio" name="Appliance" value="<%= ans[i].ItemName %>" onchange="document.getElementById('Confirm').disabled = !this.checked;"><%= ans[i].ItemName %></th>
+</tr>
+        </table>
+        <br>
+        <% } %>
+        <button type="submit" class="button" name="Confirm" disabled id="Confirm">Confirm Swapping</button>
+
+      <% } else { %>
+        <h2> Items are not available for swap </h2>
+        <% } %>
+</form>
+</main>
+    <% include partials/footer.ejs %>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset="UTF-8">
+   <title>Ashford Community Home Appliance swap</title>
+   <link rel="stylesheet" type="text/css" href ="../resources/Css/style.css">
+   <script src="../resources/Javascipt/myItems.js"></script>
+</head>
+<body>
+    <% include partials/welcome.ejs %>
+
+
+    <% include partials/logout.ejs %>
+
+    
+
+    <% include partials/site-navigation.ejs %>
+    <main>
+	     <ul class="breadcrumb">
+	        <li><a href="index">Home</a></li>
+			<li>My Appliances</li>
+	    </ul>
+        <section>
+            <article>
+			   Ashford Community's home appliances for swap
+			</article>
+			<article>
+        <h3 style="text-align:left" class="writing"></h3>
+<form action="/myItems" method="POST">
+<% if(result.length >0) { %>
+ <table>
+         <tr>
+             <th>Appliances</th>
+             <th>Category</th>
+             <th>Rating</th>
+             <th>Swapped</th>
+             <th>Update/Delete</th>
+         </tr>
+
+         <% for(var i=0;i< result.length;i++) { %>
+            <tr>
+                <td><%= result[i].item %></td>
+                <td><%= result[i].category %>
+                <td><%= result[i].rating %></td>
+                <td><%= result[i].status %></td>
+                <td>
+                  <button type="submit" name="update" value='<%= result[i].item%>'> Update</button>
+                  <%  if(result[i].status!="swapped"){%>
+                        <button type="submit" name="delete" value='<%= result[i].item %>'> Delete</button>
+                      <%}%>
+                </td>
+
+
+            </tr>
+         <% } %>
+
+
+
+</table>
+<% } else { %>
+ <h2>there are no items</h2>
+ <% } %>
+</form>
+			        </section>
+    </main>
+    <% include partials/footer.ejs %>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset="UTF-8">
+   <title>Ashford Community Home Appliance swap</title>
+   <link rel="stylesheet" type="text/css" href ="../resources/Css/style.css">
+   <script src="../resources/Javascipt/item.js"></script>
+
+</head>
+<body>
+  <% include partials/header.ejs %>
+  <% if( test == undefined){%>
+      <% include partials/navigation_signin.ejs %>
+
+      <%}
+  else
+  {%>
+  <% include partials/logout.ejs %>
+
+  <% }%>
+
+	<% include partials/site-navigation.ejs %>
+    <main>
+
+    <form action="/swap" method="post">
+      	  <div>
+                  <ul class="breadcrumb">
+                      <li>Home</li>
+                      <li>Category</li>
+                      <li>Item</li>
+                  </ul>
+                  <a href='/categories' style="float: right;">Back to catalog</a>
+              </div>
+              <div>
+			  <% if(ans ==='0') {%>
+			  <h2> Given Item code is invalid</h2>
+			  <% } %>
+			  <% result.forEach(function (user) { %>
+			  <img src='<%= user.ImageURL %>' alt="something" height="100" width="120">&nbsp;
+      <button type="submit" name="Offer" value="<%= user.ItemName %>">&#9803; Offer</button>&nbsp;
+                  <button type="button" >&#9733; Rate It</button>
+              </div><br>
+              <h2><%= user.ItemName %></h2>
+              <br>
+               <p><%= user.Description %></p>
+
+            <% }) %>
+	</form>
+    </main>
+    <% include partials/footer.ejs %>
+
+</body>
+</html>

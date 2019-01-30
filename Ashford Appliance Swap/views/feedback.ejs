@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset="UTF-8">
+   <title>Ashford Community Home Appliance swap</title>
+   <link rel="stylesheet" type="text/css" href ="../resources/Css/style.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <% include partials/header.ejs %>
+
+
+    <% include partials/logout.ejs %>
+
+
+
+    <% include partials/site-navigation.ejs %>
+    <main>
+	    <ul class="breadcrumb">
+	        <li><a href="index">Home</a></li>
+          <li><a href="categories">Catergory</a></li>
+          <li>item</li>
+          <li>Feedback</li>
+			
+		</ul>
+        <section>
+            <article>
+			   GET TO KNOW MORE ABOUT ASHFORD HOME APPLIANCE SWAP
+			</article>
+			<article>
+        <p>Provide Your Feedback here.</p><br>
+      <form action="/myItems" method='post'>
+
+        <label>Item Rating (please provide the rating of the item on a scale of 5):</label><br>
+        <input type="number" name="itemrating"   min="1" max="5" required />
+        <br>
+        <label>Item owner rating (please provide the rating of item owner on a scale of 5):</label><br>
+        <input type="number" name="ownerrating"  min="1" max="5" required  />
+        <br><br>
+
+        <button type="submit" name="Submit" value="Submit">Submit</button>
+      </form>
+
+
+
+
+
+              </article >
+	    </section>
+    </main>
+    <% include partials/footer.ejs %>
+
+</body>
+</html>

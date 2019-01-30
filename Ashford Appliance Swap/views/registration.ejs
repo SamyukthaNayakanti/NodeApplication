@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset="UTF-8">
+   <title>Ashford Community Home Appliance swap</title>
+   <link rel="stylesheet" type="text/css" href ="../resources/Css/style.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <% include partials/header.ejs %>
+
+
+    <% include partials/navigation_signin.ejs %>
+
+    <% include partials/user_navigation_offer.ejs %>
+    <% include partials/site-navigation.ejs %>
+    <main>
+	    <ul class="breadcrumb">
+	        <li><a href="index">Home</a></li>
+			<li>Registration</li>
+		</ul>
+        <section>
+            <article>
+			   GET TO KNOW MORE ABOUT ASHFORD HOME APPLIANCE SWAP
+			</article>
+			<article>
+        <form action="/register" method='post'>
+              <label>User Id</label><br>
+              <input type="text" name="userid" required />
+              <br>
+              <label>First Name</label><br>
+              <input type="text" name="firstname" required />
+              <br>
+              <label>Last Name</label><br>
+              <input type="text" name="lastname" required />
+              <br>
+
+              <label>E-mail Id</label><br>
+              <input type="text" name="emailid" required />
+              <br>
+
+              <label>Password</label><br>
+              <input type="password" name="password" required />
+              <br><br>
+
+
+
+              <input type="submit"  value="Register">
+            </form>
+
+
+
+
+
+              </article >
+	    </section>
+    </main>
+    <% include partials/footer.ejs %>
+
+</body>
+</html>

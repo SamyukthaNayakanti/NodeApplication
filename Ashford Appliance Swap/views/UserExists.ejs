@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset="UTF-8">
+   <title>Ashford Community Home Appliance swap</title>
+   <link rel="stylesheet" type="text/css" href ="../resources/Css/style.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <% include partials/header.ejs %>
+
+    <% if( test == undefined){%>
+        <% include partials/navigation_signin.ejs %>
+
+        <% }
+    else{%>
+    <% include partials/logout.ejs %>
+
+    <% }%>
+
+    <% include partials/site-navigation.ejs %>
+    <main>
+	    <ul class="breadcrumb">
+	        <li><a href="index">Home</a></li>
+			<li>About</li>
+		</ul>
+        <section>
+            <article>
+			   GET TO KNOW MORE ABOUT ASHFORD HOME APPLIANCE SWAP
+			</article>
+			<article>
+
+      <p>The user whom you are trying to register, already exists.
+      Please try with different userId and emailid.</p><br>
+
+      <p>Already registered ? <a href='/signin'>Sign In</a></p><br>
+      <p>New user <a href=/register><u>Register</u></a></p>
+
+              </article >
+	    </section>
+    </main>
+    <% include partials/footer.ejs %>
+
+</body>
+</html>

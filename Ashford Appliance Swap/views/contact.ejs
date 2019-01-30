@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset="UTF-8">
+   <title>Ashford Community Home Appliance swap</title>
+   <link rel="stylesheet" type="text/css" href ="../resources/Css/style.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <% include partials/header.ejs %>
+    <% if( test == undefined){%>
+        <% include partials/navigation_signin.ejs %>
+
+        <% }
+    else{%>
+    <% include partials/logout.ejs %>
+
+    <% }%>
+	<% include partials/site-navigation.ejs %>
+    <main>
+        <ul class="breadcrumb">
+	        <li><a href="index">Home</a></li>
+			<li>Contact</li>
+        </ul>
+	   <section>
+            <article>
+			 CONTACT US!!!
+			</article>
+			<article>
+             Questions?Comments?Mail us at snayaka1@uncc.edu
+			</article >
+           <form>
+          First name:<br>
+          <input type="text" name="firstname" value="FirstName"><br>
+          Last name:<br>
+          <input type="text" name="lastname" value="LastName"><br>
+          Explain the concern:<br>
+          <input type="text" name="Concern" value="Concern"><br>
+          <input type="submit" value="Submit">
+          </form>
+	    </section>
+    </main>
+    <% include partials/footer.ejs %>
+
+</body>
+</html>

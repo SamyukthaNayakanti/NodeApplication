@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset="UTF-8">
+   <title>Ashford Community Home Appliance swap</title>
+   <link rel="stylesheet" type="text/css" href ="../resources/Css/style.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <% include partials/header.ejs %>
+
+    <% if( test == undefined){%>
+        <% include partials/navigation_1.ejs %>
+
+        <% }
+    else{%>
+    <% include partials/logout.ejs %>
+
+    <% }%>
+
+    <% include partials/site-navigation.ejs %>
+    <main>
+	    <ul class ="breadcrumb">
+	       <li>Home</li>
+	    </ul>
+        <section>
+            <article>
+			  Welcome to home appliance swap.It is just as simple as a mouse click.
+			</article>
+			<article>
+              Make use of our new collection of home appliances with latest features!!!!
+			</article >
+	    </section>
+    </main>
+    <% include partials/footer.ejs %>
+
+</body>
+</html>

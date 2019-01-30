@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset="UTF-8">
+   <title>Ashford Community Home Appliance swap</title>
+   <link rel="stylesheet" type="text/css" href ="../resources/Css/style.css">
+   <script src="Layout/Javascipt/myItems.js"></script>
+</head>
+<body>
+  <% include partials/welcome.ejs %>
+
+
+  <% include partials/logout.ejs %>
+
+
+	<% include partials/site-navigation.ejs %>
+    <main>
+        <ul class="breadcrumb">
+	        <li><a href="index">Home</a></li>
+			<li>My Swaps</li>
+        </ul>
+        <section>
+            <article>
+			   Ashford Community's home appliances for swap
+			</article>
+
+
+      <% if(usercurrentitem !=='1') { %>
+      <h2>Samyuktha's Swap Offers</h2>
+      <form action="/myItems" method="POST">
+       <table>
+  <tr>
+    <th>Appliances</th>
+	<th>Swap offer</th>
+	<th>Action</th>
+  </tr>
+
+    <tr>
+      <td><%= usercurrentitem[0].item %></td>
+      <td><%= usercurrentitem[0].swapitem %></td>
+      <td><button type="submit" name="Accept" value='<%= usercurrentitem[0].item %>'>Accept</button>
+                            <button type="submit" name="Reject" value='<%= usercurrentitem[0].item %>'>Reject</button>
+                            <button type="submit" name="Withdraw" value='<%= usercurrentitem[0].item %>'>Withdraw</button>
+                          </td>
+    </tr>
+
+</table>
+</form>
+<% } else { %>
+  <h2> Please Go to MyAppliances page and select any of your items </h2>
+  <% } %>
+
+        </section>
+    </main>
+    <% include partials/footer.ejs %>
+
+</body>
+</html>

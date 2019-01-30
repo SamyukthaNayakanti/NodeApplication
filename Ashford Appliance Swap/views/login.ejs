@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset="UTF-8">
+   <title>Ashford Community Home Appliance swap</title>
+   <link rel="stylesheet" type="text/css" href ="../resources/Css/style.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <% include partials/header.ejs %>
+
+      <% include partials/navigation_signin.ejs %>
+
+    <% include partials/site-navigation.ejs %>
+    <% if(message==='1') { %>
+    <main>
+
+      <h2>Please Login</h2>
+      <br>
+
+      <form action="/login" method='post'>
+
+<label for="email">E-mailid:</label><br>
+<input name="emailid" id="email" type="text"  required/>
+<br>
+<label for="password">Password:</label><br>
+<input name="password" id="password" type="password"  required>
+<br><br>
+<input type="submit"  value="Sign in">
+</form>
+<br>
+<h2>Don't have an account? <a href=/register><u>Register</u></a></h2>
+
+    </main>
+    <% } else { %>
+      <main>
+
+        <h2>Either emailid or password are incorrect. Please try again</h2>
+        <br>
+
+        <form action="/login" method='post'>
+  <label for="email">E-mailid:</label><br>
+  <input name="emailid" id="email" type="text" required/>
+  <br>
+  <label for="password">Password:</label><br>
+  <input name="password" id="password" type="password" required/>
+  <br><br>
+  <input type="submit" value="Sign in">
+  </form>
+  <br>
+  <h2>Don't have an account? <a href=/register><u>Register</u></a></h2>
+
+      </main>
+      <% } %>
+
+    <% include partials/footer.ejs %>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset="UTF-8">
+   <title>Ashford Community Home Appliance swap</title>
+   <link rel="stylesheet" type="text/css" href ="../resources/Css/style.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <% include partials/header.ejs %>
+
+    <% if( test == undefined){%>
+        <% include partials/navigation_signin.ejs %>
+
+        <% }
+    else{%>
+    <% include partials/logout.ejs %>
+
+    <% }%>
+
+    <% include partials/site-navigation.ejs %>
+    <main>
+	    <ul class="breadcrumb">
+	        <li><a href="index">Home</a></li>
+			<li>About</li>
+		</ul>
+        <section>
+            <article>
+			   GET TO KNOW MORE ABOUT ASHFORD HOME APPLIANCE SWAP
+			</article>
+			<article>
+              We are the source for many of the most used home appliances.<br>
+              All the quality products are available on the site.Only after quality check is done,we list it on our website.<br>
+              We are serving since two decades.Help us serve you more...Want any paticular item to be listed for swap?Contact us and let us know your needs.We are more than happy to serve you.
+			</article >
+	    </section>
+    </main>
+    <% include partials/footer.ejs %>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset="UTF-8">
+   <title>Ashford Community Home Appliance swap</title>
+   <link rel="stylesheet" type="text/css" href ="../resources/Css/style.css">
+   <script src="categories.js"></script>
+</head>
+<body>
+    <% include partials/header.ejs %>
+<% if( test == undefined){%>
+    <% include partials/navigation_signin.ejs %>
+
+    <%}
+else
+{%>
+<% include partials/logout.ejs %>
+
+<% }%>
+
+    <% include partials/site-navigation.ejs %>
+    <main>
+	     <ul class="breadcrumb">
+	        <li><a href="index">Home</a></li>
+			<li>Categories</li>
+		</ul>
+
+    <% if(use) { %>
+<% var a=0; %>
+<% for (var i=0; i < category.length; i++) { %>
+        <% if(category[i].categoryName== use) { %>
+        <h2 >
+          <%= category[i].categoryName %>
+        </h2>
+        <% a++; %>
+        <% } %>
+		<% } %>
+
+		<% if(a === 0) { %>
+        <h2>No Items available for the given category</h2>
+		 <% } %>
+		<% for(var j=0; j < result.length; j++) { %>
+        <% if(use == result[j].CatalogCategory) { %>
+		    <ul>
+            <li>
+              <a href='<%= "/item?ItemCode="+result[j].ItemCode %>'>
+          <%= result[j].ItemName %> </a>
+            </li>
+          </ul>
+		<% } %>
+		<% } %>
+<% } else{ %>
+<% for(var i=0; i < category.length; i++) { %>
+      <h2>
+        <%= category[i].categoryName %>
+      </h2>
+      <% for(var j=0;j< result.length;j++) { %>
+        <% if(category[i].categoryName == result[j].CatalogCategory) { %>
+          <ul>
+            <li>
+              <a href='<%= "/item?ItemCode="+result[j].ItemCode %>'>
+          <%= result[j].ItemName %> </a>
+            </li>
+          </ul>
+          <% } %>
+
+          <% } %>
+
+      <% } %>
+	  <% } %>
+
+
+  </main>
+
+    <% include partials/footer.ejs %>
+
+
+</body>
+
+</html>

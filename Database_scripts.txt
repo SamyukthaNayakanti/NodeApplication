@@ -1,0 +1,143 @@
+use AshfordAppliancesSwap
+
+db.createCollection('items');
+
+db.items.insert({
+ItemCode:'A01',
+ItemName:'Classic Toaster', 
+CatalogCategory:'Kitchen Appliances',
+Description:'This one is affordable and toasts the bread on both sides burnt or under toasted bread when the dial is properly.',
+Rating: '7/10',
+ImageURL:'../resources/Images/Toaster.jpg'
+});
+
+
+
+db.items.insert({
+ItemCode:'A02',
+ItemName:'Panasonic Coffee Maker', 
+CatalogCategory:'Kitchen Appliances',
+Description:'Coffee maker has 5-cup capacity with two compartments.It also has frying griddle to fryeggs and other foods',
+Rating: '10/10',
+ImageURL:'../resources/Images/CoffeeMaker.jpg'
+});
+
+
+
+
+db.items.insert({
+ItemCode:'A03',
+ItemName:'Whirlpool Out door Grills', 
+CatalogCategory:'Kitchen Appliances',
+Description:'It is adjustable from sides if you want extra protection.It is easy to install and remove if you do not use it',
+Rating: '5/10',
+ImageURL:'../resources/Images/OutdoorGrills.jpg'
+});
+
+
+
+db.items.insert({
+ItemCode:'A04',
+ItemName:'Whirlpool Solar Cooker', 
+CatalogCategory:'Kitchen Appliances',
+Description:'Save money,time and energy using these solar cookers which are ultra energy efficient.It is double zipper quality',
+Rating: '5/10',
+ImageURL:'../resources/Images/SolarCooker.jpg'
+});
+
+
+
+
+db.items.insert({
+ItemCode:'B01',
+ItemName:'Kentucky Cover Pillows', 
+CatalogCategory:'LivingRoom Appliances',
+Description:'Kentucky Interior Designers introduces throw pillows with sassy outlook. The pillows in blue and white checkered models will make the living room look more classy and fun to be around.They complement your beds and sofas perfectly.',
+Rating: '7/10',
+ImageURL:'../resources/Images/CoverPillows.jpg'
+});
+
+
+db.items.insert({
+ItemCode:'B02',
+ItemName:'Sofa Blankets', 
+CatalogCategory:'LivingRoom Appliances',
+Description:'Shield your fine furniture from moisture,hair and accidents.It is made of ultrasonic heat bonded fabric.',
+Rating: '8/10',
+ImageURL:'../resources/Images/SofaBlankets.jpg'
+});
+
+
+
+db.items.insert({
+ItemCode:'B03',
+ItemName:'Tommy Chair and recliner', 
+CatalogCategory:'LivingRoom Appliances',
+Description:'Add warmth to your living room with our appliances.We need not compromise comfort for looks.Our chair and recliner set looks savvy and also has the gives the pleasure of recling to a higher level',
+Rating: '9/10',
+ImageURL:'../resources/Images/ChairAndRecliner.jpg'
+});
+
+
+===========================================================================================================================
+===========================================================================================================================
+
+db.createCollection('Users');
+
+db.Users.insert({
+
+  UserId : "User1",
+  FirstName : "Samyuktha",
+  LastName : "Nayakanti",
+  EmailAdress : "snayaka1@gmail.com",
+  AddressLine1  : "9309 E",
+  AddressLine2  : "Kittansett Drive",
+  City : "Charlotte",
+  State : "NC",
+  PostCode : "28262",
+  Country : "USA",
+  Password: "Samyu@1234"
+
+});
+
+==========================================================================================================================================================================================================
+==========================================================================================================================================================================================================
+
+db.createCollection('categories');
+
+db.categories.insert([{categoryCode:"C01",categoryName:"Kitchen Appliances"},{categoryCode:"C02",categoryName:"LivingRoom Appliances"}]);
+
+
+======================================================================================================================
+======================================================================================================================
+
+db.createCollection('useritems');
+
+db.useritems.insert({UserId:"User1",item:"Classic Toaster",rating:"4/5",status:"pending",swapitem:"Panasonic Coffee Maker",swapitemrating:"",swapperrating:"",category:"Kitchen Appliances"});
+
+db.useritems.insert({UserId:"User1",item:"Whirlpool Out door Grills",rating:"4/5",status:"pending",swapitem:"Whirlpool Solar Cooker",swapitemrating:"",swapperrating:"",category:"Kitchen Appliances"});
+db.useritems.insert({UserId:"User1",item:"Tommy Chair and recliner",rating:"4/5",status:"available",swapitem:"Sofa Blankets",swapitemrating:"",swapperrating:"",category:"LivingRoom Appliances"});
+
+
+
+====================================================================================================================================
+====================================================================================================================================
+
+db.createCollection('offerfeedbacks');
+
+db.offerfeedbacks.insert([{offerID:"O01",userID1:"U01",userID2:"U02",rating:"***"},{offerID:"O02",userID1:"U02",userID2:"U01",rating:"****"}]);
+
+=============================================================================================================================================
+=============================================================================================================================================
+
+
+db.createCollection('UserProfiles');
+
+db.UserProfiles.insert([{UserId:'U01',UserItem:['Classic Toaster','Panasonic Coffee Maker']},{UserId:'U02',userItem:['Whirlpool Out door Grills','Whirlpool Solar Cooker']}]);
+
+=====================================================================================================================================
+=====================================================================================================================================
+
+db.createCollection('itemfeedbacks');
+
+db.itemfeedbacks.insert([{ItemCode:"A01",UserId:'User1',Rating:"2/10"},{ItemCode:"B01",UserId:'User1',Rating:"3/10"},{ItemCode:"A02",UserId:'User1',Rating:"4/10"}]);
